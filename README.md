@@ -33,7 +33,6 @@ These rules describe how our business functions on a daily basis, from the ovens
 
 ## Part 2: Raw Data Dictionary
 
-### 📊 Raw Data Dictionary (Céleste Cookies & Cream)
 
 | Meaning of the Data | Type | Size (Chars/Digits) |
 | :--- | :--- | :--- |
