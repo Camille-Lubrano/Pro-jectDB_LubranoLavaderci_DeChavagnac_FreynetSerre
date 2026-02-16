@@ -34,9 +34,13 @@ These rules describe how our business functions on a daily basis, from the ovens
 ## Part 2: Raw Data Dictionary
 
 This table contains the fundamental building blocks for the system. I’ve kept this "flat"—meaning I haven't grouped them into tables yet—so the student can decide on the best normalization.
-Meaning of Data	Type	Size (Chars/Digits)
+
+Meaning of Data	| Type |	Size (Chars/Digits)
+-
 Unique Product ID	Alphanumeric	10
+-
 Product Commercial Name	Text	50
+-
 Product Description	Text	255
 Product Category (e.g., Cookie, Gelato)	Text	30
 Calories per 100g	Numeric	4
