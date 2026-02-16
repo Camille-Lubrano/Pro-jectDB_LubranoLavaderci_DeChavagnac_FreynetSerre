@@ -33,45 +33,40 @@ These rules describe how our business functions on a daily basis, from the ovens
 
 ## Part 2: Raw Data Dictionary
 
-This table contains the fundamental building blocks for the system. I’ve kept this "flat"—meaning I haven't grouped them into tables yet—so the student can decide on the best normalization.
+### 📊 Raw Data Dictionary (Céleste Cookies & Cream)
 
-
-_
-|**Meaning of Data**|Type|Size (Chars/Digits)|
-_
-|**Unique Product ID**|Alphanumeric|10|
-_
-Product Commercial Name,Text,50
-Product Description,Text,255
-"Product Category (e.g., Cookie, Gelato)",Text,30
-Calories per 100g,Numeric,4
-"Format Name (e.g., Large Box, Single)",Text,20
-Unit Selling Price,Decimal,"6,2"
-Ingredient Unique Code,Alphanumeric,10
-Ingredient Name,Text,50
-Ingredient Stock Quantity,Numeric,8
-"Ingredient Unit of Measure (g, ml, unit)",Text,10
-"Allergen Name (e.g., Peanuts, Gluten)",Text,30
-Allergen Severity Level,Text,15
-Supplier Name,Text,100
-Supplier Contact Email,Text,100
-Supplier Phone Number,Text,15
-Supplier Street Address,Text,150
-Purchase Order Reference Number,Alphanumeric,12
-Purchase Order Date,Date,10
-Purchase Order Total Amount,Decimal,"10,2"
-Customer Last Name,Text,50
-Customer First Name,Text,50
-Customer Loyalty Card Number,Alphanumeric,20
-Customer Points Balance,Numeric,6
-Order Transaction ID,Alphanumeric,15
-Order Date and Time,DateTime,19
-Quantity of Product Ordered,Numeric,3
-Employee ID,Alphanumeric,8
-Employee Job Title,Text,40
-Employee Hire Date,Date,10
-"Promotion Code (e.g., SUMMER25)",Alphanumeric,10
-Promotion Discount Percentage,Numeric,3
-Promotion Expiry Date,Date,10
-
-Would you like me to draft a sample Conceptual Data Model (MCD) based on these rules to give the student a head start?
+| Meaning of the Data | Type | Size (Chars/Digits) |
+| :--- | :--- | :--- |
+| Unique Product ID | Alphanumeric | 10 |
+| Product Commercial Name | Text | 50 |
+| Product Description | Text | 255 |
+| Product Category (e.g., Cookie, Gelato) | Text | 30 |
+| Calories per 100g | Numeric | 4 |
+| Format Name (e.g., Large Box, Single) | Text | 20 |
+| Unit Selling Price | Decimal | 6,2 |
+| Ingredient Unique Code | Alphanumeric | 10 |
+| Ingredient Name | Text | 50 |
+| Ingredient Stock Quantity | Numeric | 8 |
+| Ingredient Unit of Measure (g, ml, unit) | Text | 10 |
+| Allergen Name (e.g., Peanuts, Gluten) | Text | 30 |
+| Allergen Severity Level | Text | 15 |
+| Supplier Name | Text | 100 |
+| Supplier Contact Email | Text | 100 |
+| Supplier Phone Number | Text | 15 |
+| Supplier Street Address | Text | 150 |
+| Purchase Order Reference Number | Alphanumeric | 12 |
+| Purchase Order Date | Date | 10 |
+| Purchase Order Total Amount | Decimal | 10,2 |
+| Customer Last Name | Text | 50 |
+| Customer First Name | Text | 50 |
+| Customer Loyalty Card Number | Alphanumeric | 20 |
+| Customer Points Balance | Numeric | 6 |
+| Order Transaction ID | Alphanumeric | 15 |
+| Order Date and Time | DateTime | 19 |
+| Quantity of Product Ordered | Numeric | 3 |
+| Employee ID | Alphanumeric | 8 |
+| Employee Job Title | Text | 40 |
+| Employee Hire Date | Date | 10 |
+| Promotion Code (e.g., SUMMER25) | Alphanumeric | 10 |
+| Promotion Discount Percentage | Numeric | 3 |
+| Promotion Expiry Date | Date | 10 |
