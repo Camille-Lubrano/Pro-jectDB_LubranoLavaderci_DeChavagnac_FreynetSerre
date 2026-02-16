@@ -36,11 +36,11 @@ These rules describe how our business functions on a daily basis, from the ovens
 This table contains the fundamental building blocks for the system. I’ve kept this "flat"—meaning I haven't grouped them into tables yet—so the student can decide on the best normalization.
 
 
--
+_
 |**Meaning of Data**|Type|Size (Chars/Digits)|
--
+_
 |**Unique Product ID**|Alphanumeric|10|
--
+_
 Product Commercial Name,Text,50
 Product Description,Text,255
 "Product Category (e.g., Cookie, Gelato)",Text,30
