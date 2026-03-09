@@ -75,14 +75,14 @@ These rules describe how our business functions on a daily basis, from the ovens
 
 
 # MLD :
-Product = (ID_Product INT, Pr_Name VARCHAR(50), Pr_Description VARCHAR(50), Pr_Category VARCHAR(50), Pr_Format VARCHAR(50), Pr_Calories DECIMAL(15,2), Price INT);
-Ingredient = (ID_Ingredient INT, Ing_Name VARCHAR(50), Ing_Stock_Quant DECIMAL(15,2));
-Allergen = (ID_Allergen INT, Al_Name VARCHAR(50), Al_Severity VARCHAR(50));
-Supplier = (ID_Supplier INT, Sup_Name VARCHAR(50), Sup_email VARCHAR(50), Sup_phone VARCHAR(50));
-Promotion = (ID_Promotion INT, Promo_Discount INT, Promo_Begining_Date DATE, Promo_End_Date DATE, #ID_Product);
-Address = (ID_Address INT, Country VARCHAR(50), City VARCHAR(50), Street VARCHAR(50), Number VARCHAR(50));
-Shop = (ID_Shop INT, Shop_Income DECIMAL(15,2), Shop_Size DECIMAL(15,2), Shop_Employees_Number INT, #ID_Address);
-Employee = (ID_Employee INT, Emp_Job_Title VARCHAR(50), Emp_Hire_Date DATE, #ID_Employee_manager, #ID_Shop);
-contains = (#ID_Ingredient, #ID_Allergen);
-Has = (#ID_Product, #ID_Ingredient);
-delivery = (#ID_Product, #ID_Supplier, #ID_Shop);
+Product = (<u>ID_Product INT<u>, Pr_Name VARCHAR(50), Pr_Description VARCHAR(50), Pr_Category VARCHAR(50), Pr_Format VARCHAR(50), Pr_Calories DECIMAL(15,2), Price INT);
+Ingredient = (<u>ID_Ingredient<u> INT, Ing_Name VARCHAR(50), Ing_Stock_Quant DECIMAL(15,2));
+Allergen = (<u>ID_Allergen<u> INT, Al_Name VARCHAR(50), Al_Severity VARCHAR(50));
+Supplier = (<u>ID_Supplier<u> INT, Sup_Name VARCHAR(50), Sup_email VARCHAR(50), Sup_phone VARCHAR(50));
+Promotion = (<u>ID_Promotion<u> INT, Promo_Discount INT, Promo_Begining_Date DATE, Promo_End_Date DATE, #ID_Product);
+Address = (<u>ID_Address<u> INT, Country VARCHAR(50), City VARCHAR(50), Street VARCHAR(50), Number VARCHAR(50));
+Shop = (<u>ID_Shop<u> INT, Shop_Income DECIMAL(15,2), Shop_Size DECIMAL(15,2), Shop_Employees_Number INT, #ID_Address);
+Employee = (<u>ID_Employee<u> INT, Emp_Job_Title VARCHAR(50), Emp_Hire_Date DATE, #ID_Employee_manager, #ID_Shop);
+contains = (<u>#ID_Ingredient, #ID_Allergen<u>);
+Has = (<u>#ID_Product, #ID_Ingredient<u>);
+delivery = (<u>#ID_Product, #ID_Supplier, #ID_Shop<u>);
