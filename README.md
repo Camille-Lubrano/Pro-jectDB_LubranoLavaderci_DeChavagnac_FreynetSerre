@@ -69,3 +69,20 @@ These rules describe how our business functions on a daily basis, from the ovens
 | Promotion Code (e.g., SUMMER25) | Alphanumeric | 10 |
 | Promotion Discount Percentage | Numeric | 3 |
 | Promotion Expiry Date | Date | 10 |
+
+
+
+
+
+# MLD :
+Product = (ID_Product INT, Pr_Name VARCHAR(50), Pr_Description VARCHAR(50), Pr_Category VARCHAR(50), Pr_Format VARCHAR(50), Pr_Calories DECIMAL(15,2), Price INT);
+Ingredient = (ID_Ingredient INT, Ing_Name VARCHAR(50), Ing_Stock_Quant DECIMAL(15,2));
+Allergen = (ID_Allergen INT, Al_Name VARCHAR(50), Al_Severity VARCHAR(50));
+Supplier = (ID_Supplier INT, Sup_Name VARCHAR(50), Sup_email VARCHAR(50), Sup_phone VARCHAR(50));
+Promotion = (ID_Promotion INT, Promo_Discount INT, Promo_Begining_Date DATE, Promo_End_Date DATE, #ID_Product);
+Address = (ID_Address INT, Country VARCHAR(50), City VARCHAR(50), Street VARCHAR(50), Number VARCHAR(50));
+Shop = (ID_Shop INT, Shop_Income DECIMAL(15,2), Shop_Size DECIMAL(15,2), Shop_Employees_Number INT, #ID_Address);
+Employee = (ID_Employee INT, Emp_Job_Title VARCHAR(50), Emp_Hire_Date DATE, #ID_Employee_manager, #ID_Shop);
+contains = (#ID_Ingredient, #ID_Allergen);
+Has = (#ID_Product, #ID_Ingredient);
+delivery = (#ID_Product, #ID_Supplier, #ID_Shop);
