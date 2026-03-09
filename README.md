@@ -27,9 +27,23 @@ These rules describe how our business functions on a daily basis, from the ovens
 
     An order can contain several different products in various quantities.
 
-    We track our Employees (bakers and servers), noting who processed which customer order and who is responsible for which kitchen shift.
+    Every Promotion (discount) has a start date, an end date, and a specific percentage off, which can be applied to specific products.Product Value Integrity: Ensures that neither the Price nor the Pr_Calories can be a negative number. This prevents accounting errors and impossible nutritional data.
 
-    Every Promotion (discount) has a start date, an end date, and a specific percentage off, which can be applied to specific products.
+    Stock Floor: Guarantees that Ing_Stock_Quant never drops below zero. In a real-world database, while you might run out of stock (0), you cannot physically have "negative" flour or sugar.
+
+    Chronological Promotion Logic: Validates that a promotion cannot end before it has started. This prevents logical bugs in your application’s "Active Promotion" filters.
+
+    Discount Normalization: Restricts Promo_Discount to a range of 1 to 100. This assumes the discount is a percentage; it prevents entering a 150% discount (giving money away) or a 0% discount (which isn't a promotion).
+
+    Standardized Severity: Limits the Al_Severity field to a specific set of strings. This is crucial for front-end filtering and ensures one person doesn't type "High" while another types "Very Dangerous."
+
+    Basic Email Validation: Uses a LIKE pattern to ensure the Sup_email contains at least an @ symbol and a dot. It’s a simple "sanity check" to catch typos during data entry.
+
+    Shop Operational Constraints: Ensures a Shop_Size is a positive number (a shop must occupy space) and that Shop_Employees_Number isn't negative.
+
+    Hire Date Realism: Prevents an employee from being "hired" in the future. It ensures the Emp_Hire_Date is either today or a date in the past.
+
+    
 
 ## Part 2: Raw Data Dictionary
 
