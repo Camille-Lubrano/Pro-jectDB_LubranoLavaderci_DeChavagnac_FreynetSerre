@@ -11,7 +11,7 @@ These rules describe how our business functions on a daily basis, from the ovens
 
     Each Product (cookie, ice cream, or pastry) must have a unique name and a specific category.
 
-    We sell products in different Formats (e.g., Single, Box of 6, Pint, Scoop); the price is determined by the combination of the product and its format.
+    We sell products in different Formats (e.g., Single, Box of 6, Pint, Scoop).
 
     Every product is made using multiple Ingredients, and we need to track exactly which ingredients go into which product.
 
