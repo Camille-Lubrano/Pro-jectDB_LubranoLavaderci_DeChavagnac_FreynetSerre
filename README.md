@@ -9,80 +9,67 @@ information system is built. Next, based on these rules, provide a raw data dict
 
 These rules describe how our business functions on a daily basis, from the ovens to the cash registers.
 
-    Each Product (cookie, ice cream, or pastry) must have a unique name and a specific category.
-
-    We sell products in different Formats (e.g., Single, Box of 6, Pint, Scoop).
-
-    Every product is made using multiple Ingredients, and we need to track exactly which ingredients go into which product.
-
-    An Ingredient can be used in many different products (e.g., sea salt is in almost everything).
-
-    For transparency and safety, we must list all Allergens associated with each ingredient.
-
-    We source our ingredients from various Suppliers. A single ingredient might be provided by multiple suppliers, and one supplier usually provides several ingredients.
-
-    We need to keep a record of every Purchase Order sent to suppliers, including the date and the total cost.
-
-    Each Customer can place multiple Orders at our retail counters.
-
-    An order can contain several different products in various quantities.
-
-    Every Promotion (discount) has a start date, an end date, and a specific percentage off, which can be applied to specific products.Product Value Integrity: Ensures that neither the Price nor the Pr_Calories can be a negative number. This prevents accounting errors and impossible nutritional data.
-
-    Stock Floor: Guarantees that Ing_Stock_Quant never drops below zero. In a real-world database, while you might run out of stock (0), you cannot physically have "negative" flour or sugar.
-
-    Chronological Promotion Logic: Validates that a promotion cannot end before it has started. This prevents logical bugs in your application’s "Active Promotion" filters.
-
-    Discount Normalization: Restricts Promo_Discount to a range of 1 to 100. This assumes the discount is a percentage; it prevents entering a 150% discount (giving money away) or a 0% discount (which isn't a promotion).
-
-    Standardized Severity: Limits the Al_Severity field to a specific set of strings. This is crucial for front-end filtering and ensures one person doesn't type "High" while another types "Very Dangerous."
-
-    Basic Email Validation: Uses a LIKE pattern to ensure the Sup_email contains at least an @ symbol and a dot. It’s a simple "sanity check" to catch typos during data entry.
-
-    Shop Operational Constraints: Ensures a Shop_Size is a positive number (a shop must occupy space) and that Shop_Employees_Number isn't negative.
-
-    Hire Date Realism: Prevents an employee from being "hired" in the future. It ensures the Emp_Hire_Date is either today or a date in the past.
+Each product must have a unique name and a specific category.
+Products are sold in different formats such as single, box of 6, pint, or scoop.
+A product can be made of multiple ingredients, and an ingredient can be used in many different products.
+All allergens associated with each ingredient must be listed for transparency and safety.
+Ingredients are sourced from various suppliers, where one supplier provides several ingredients and one ingredient can be provided by multiple suppliers.
+Each customer can place multiple orders at retail counters.
+An order can contain several different products in various quantities.
+Every promotion has a start date, an end date, and a specific percentage off applied to specific products.
+Product prices and calorie counts cannot be negative numbers.
+Ingredient stock quantities must never drop below zero.
+A promotion cannot end before its start date.
+Promotion discounts must be restricted to a range between 1 and 100 percent.
+Allergen severity levels must be restricted to 'Low', 'Moderate', 'High', or 'Severe'.
+Supplier email addresses must contain an '@' symbol and a dot.
+A shop must have a size greater than zero and a non-negative number of employees.
+Employee hire dates cannot be set in the future.
+An employee cannot be affiliated with more than one department.
+Employees must have a designated manager within the organizational hierarchy.
+A department name must follow the format 'S' followed by a 2-digit number.
 
     
 
 ## Part 2: Raw Data Dictionary
 
 
-| Meaning of the Data | Type | Size (Chars/Digits) |
-| :--- | :--- | :--- |
-| Unique Product ID | Alphanumeric | 10 |
-| Product Commercial Name | Text | 50 |
-| Product Description | Text | 255 |
-| Product Category (e.g., Cookie, Gelato) | Text | 30 |
-| Calories per 100g | Numeric | 4 |
-| Format Name (e.g., Large Box, Single) | Text | 20 |
-| Unit Selling Price | Decimal | 6,2 |
-| Ingredient Unique Code | Alphanumeric | 10 |
-| Ingredient Name | Text | 50 |
-| Ingredient Stock Quantity | Numeric | 8 |
-| Ingredient Unit of Measure (g, ml, unit) | Text | 10 |
-| Allergen Name (e.g., Peanuts, Gluten) | Text | 30 |
-| Allergen Severity Level | Text | 15 |
-| Supplier Name | Text | 100 |
-| Supplier Contact Email | Text | 100 |
-| Supplier Phone Number | Text | 15 |
-| Supplier Street Address | Text | 150 |
-| Purchase Order Reference Number | Alphanumeric | 12 |
-| Purchase Order Date | Date | 10 |
-| Purchase Order Total Amount | Decimal | 10,2 |
-| Customer Last Name | Text | 50 |
-| Customer First Name | Text | 50 |
-| Customer Loyalty Card Number | Alphanumeric | 20 |
-| Customer Points Balance | Numeric | 6 |
-| Order Transaction ID | Alphanumeric | 15 |
-| Order Date and Time | DateTime | 19 |
-| Quantity of Product Ordered | Numeric | 3 |
-| Employee ID | Alphanumeric | 8 |
-| Employee Job Title | Text | 40 |
-| Employee Hire Date | Date | 10 |
-| Promotion Code (e.g., SUMMER25) | Alphanumeric | 10 |
-| Promotion Discount Percentage | Numeric | 3 |
-| Promotion Expiry Date | Date | 10 |
+Meaning of the Data,SQL Data Type,Size (Chars/Digits)
+
+Unique Product ID,INT,Primary Key
+Product Name,VARCHAR,50
+Product Description,VARCHAR,50
+Product Category,VARCHAR,50
+Product Format,VARCHAR,50
+Product Calories,DECIMAL,"15,2"
+Product Selling Price,INT,-
+Unique Ingredient ID,INT,Primary Key
+Ingredient Name,VARCHAR,50
+Ingredient Stock Quantity,DECIMAL,"15,2"
+Unique Allergen ID,INT,Primary Key
+Allergen Name,VARCHAR,50
+Allergen Severity Level,VARCHAR,50
+Unique Supplier ID,INT,Primary Key
+Supplier Name,VARCHAR,50
+Supplier Contact Email,VARCHAR,50
+Supplier Phone Number,VARCHAR,50
+Unique Address ID,INT,Primary Key
+Address Country,VARCHAR,50
+Address City,VARCHAR,50
+Address Street,VARCHAR,50
+Address Number,VARCHAR,50
+Unique Promotion ID,INT,Primary Key
+Promotion Discount,INT,-
+Promotion Beginning Date,DATE,-
+Promotion End Date,DATE,-
+Unique Shop ID,INT,Primary Key
+Shop Income,DECIMAL,"15,2"
+Shop Size,DECIMAL,"15,2"
+Number of Employees in Shop,INT,-
+Unique Employee ID,INT,Primary Key
+Employee Job Title,VARCHAR,50
+Employee Hire Date,DATE,-
+
 
 
 
