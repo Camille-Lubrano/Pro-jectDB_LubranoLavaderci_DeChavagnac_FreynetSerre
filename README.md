@@ -24,7 +24,6 @@ Promotion discounts must be restricted to a range between 1 and 100 percent.
 Allergen severity levels must be restricted to 'Low', 'Moderate', 'High', or 'Severe'.
 Supplier email addresses must contain an '@' symbol and a dot.
 A shop must have a size greater than zero and a non-negative number of employees.
-Employee hire dates cannot be set in the future.
 An employee cannot be affiliated with more than one department.
 Employees must have a designated manager within the organizational hierarchy.
 A department name must follow the format 'S' followed by a 2-digit number.
