@@ -23,6 +23,11 @@ Select Pr_Name, Pr_Category
 FROM Product
 WHERE Pr_Categorie IN ('Bakery');
 
+-- Counts number of products by category
+SELECT Pr_Category, COUNT(*) AS Nb_products
+FROM Product
+GROUP BY Pr_Category;
+
 -- Lists ingredients of product
 SELECT i.Ing_name
 FROM ingredient i
