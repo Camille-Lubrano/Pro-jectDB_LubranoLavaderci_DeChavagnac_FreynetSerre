@@ -18,6 +18,11 @@ SELECT *
 FROM Product
 WHERE Pr_Name LIKE '%cake%';
 
+-- Lists products from Bakery
+Select Pr_Name, Pr_Category
+FROM Product
+WHERE Pr_Categorie IN ('Bakery');
+
 -- Lists ingredients of product
 SELECT i.Ing_name
 FROM ingredient i
