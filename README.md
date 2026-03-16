@@ -86,3 +86,18 @@ Employee = (<u>ID_Employee</u> INT, Emp_Job_Title VARCHAR(50), Emp_Hire_Date DAT
 contains = (<u>#ID_Ingredient, #ID_Allergen</u>);
 Has = (<u>#ID_Product, #ID_Ingredient</u>);
 delivery = (<u>#ID_Product, #ID_Supplier, #ID_Shop</u>);
+
+
+
+
+
+# Part 5 : Usage scenarios
+
+Scenario 1 :
+We are an employee of a shop, charged to apply propotions to various products during Black Friday.
+However, to make these promotions coherent, we want to obtain data on various categories in order to create promotions on a large scale.
+For example, this employee could search for all the products having "cake" in their names, to put a same discount on all cakes from the shop.
+Following that logic, this employee could obtain all the information he needs to create various promotions using the queries
+
+Scenario 2 :
+We are a manager of the shop, and we just had a fire during the day at the shop which destroyed important informations : hopefully the databases are safe, but our director absolutely wants physical documents also, thus we have to re-obtain informations about a lot of things in order to print them such as products allergens, ingredients, but also the number of employees, our suppliers etc.
